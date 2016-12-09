@@ -37,6 +37,23 @@ describe('WeaponSelectorView', () => {
             expect(clickCount).to.equal(3);
         });
 
+        it('should add click handler to the simulate button', () => {
+
+            let element = document.createElement('section');
+            element.innerHTML = '<ul class="js-weapon-list"></ul><button class="js-simutator"></button>';
+
+            //TODO: get sinon working for spys
+            let clickCount = 0;
+            let onClickSpy = () => {clickCount++};
+            let weaponSelectorView = new WeaponSelectorView(element, () => {}, onClickSpy);
+
+            weaponSelectorView.render();
+            let simulatorButton = weaponSelectorView.element.getElementsByClassName('js-simutator')[0];
+
+            simulatorButton.click();
+            expect(clickCount).to.equal(1);
+        });
+
     });
 
 });
