@@ -8,4 +8,11 @@ describe('Player', () => {
         expect(player.name).to.equal(name);
     });
 
+    it('should have no weapon on construction', () => {
+        let name = 'test';
+        let player = new Player(name);
+        expect(player.weapon).to.be.null;
+    });
+
+
 });
