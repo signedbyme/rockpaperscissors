@@ -35,4 +35,14 @@ describe('weapons module', () => {
         });
     });
 
+    describe('Scissors rules', () => {
+        it('Scissors beats paper', () => {
+            expect(weaponRules.scissors.paper).to.be.true;
+        });
+
+        it('Rock beats scissors', () => {
+            expect(weaponRules.scissors.rock).to.be.false;
+        });
+    });
+
 });
