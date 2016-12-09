@@ -8,6 +8,7 @@ import calculateWinner from './calculateWinner';
 
 const playerOne = new Player('You');
 const playerTwo = new Player('The computer');
+const simulatedPlayerName = 'Lazy ol\' you';
 
 const weaponsElem = document.getElementsByClassName('js-weapons')[0];
 const weaponSelectorView = new WeaponSelectorView(weaponsElem, onWeaponSelectHandler, onSimulatorClickHandler);
@@ -34,7 +35,7 @@ function showResultScreen() {
 }
 
 function onSimulatorClickHandler() {
-    playerOne.name = 'Lazy ol\' you';
+    playerOne.name = simulatedPlayerName;
     playerOne.weapon = randomWeaponSelector();
     showResultScreen();
 }
