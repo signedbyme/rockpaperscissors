@@ -54,6 +54,19 @@ describe('WeaponSelectorView', () => {
             expect(clickCount).to.equal(1);
         });
 
+        it('should show the element', () => {
+
+            let element = document.createElement('section');
+            element.style.display = 'none';
+            element.innerHTML = '<ul class="js-weapon-list"></ul><button class="js-simutator"></button>';
+
+            let weaponSelectorView = new WeaponSelectorView(element, () => {}, () => {});
+
+            weaponSelectorView.render();
+
+            expect(weaponSelectorView.element.style.display).to.equal('block');
+        });
+
     });
 
 });
