@@ -1,5 +1,5 @@
 import { WEAPONS } from './weapons';
 
 export default function getRandomWeapon() {
-	return ''
+	return WEAPONS[ Math.floor(Math.random() * WEAPONS.length) ];
 }
