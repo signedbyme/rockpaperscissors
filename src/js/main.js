@@ -20,3 +20,12 @@ function startGame() {
 function showWeaponSelectorScreen(){
     weaponSelectorView.render();
 }
+
+function onSimulatorClickHandler() {
+    playerOne.name = 'Lazy ol\' you';
+    playerOne.weapon = randomWeaponSelector();
+}
+
+function onWeaponSelectHandler(weapon) {
+    playerOne.weapon = weapon;
+}
