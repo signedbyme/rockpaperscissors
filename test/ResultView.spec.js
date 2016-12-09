@@ -16,15 +16,14 @@ describe('ResultView', () => {
                 weapon: 'paper'
             };
 
-            let expectedHTML = `<h2>And the winner is...Player two!</h2>
-                    <div>Player one chose rock</div>
-                    <div>Player chose paper</div>
-                    <button>Play again</button>`
-
             let resultView = new ResultView(element, playerOne, playerTwo);
+            resultView.winner = playerTwo;
             resultView.render();
 
-            expect(resultView.element.innerHTML).to.include(expectedHTML);
+            expect(resultView.element.innerHTML).to.include('And the winner is...Player two!');
+            expect(resultView.element.innerHTML).to.include('paper beats rock');
+            expect(resultView.element.innerHTML).to.include('Player one chose rock');
+            expect(resultView.element.innerHTML).to.include('Player two chose paper');
         });
 
     });
