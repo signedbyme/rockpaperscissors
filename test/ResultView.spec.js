@@ -28,7 +28,7 @@ describe('ResultView', () => {
             });
         });
 
-        describe('a draw', () => {
+        describe('a drawn result', () => {
 
             it('should render the draw result message', () => {
                 let element = document.createElement('section');
