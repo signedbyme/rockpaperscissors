@@ -2,16 +2,18 @@ import { WEAPONS } from './weapons';
 
 export default class WeaponSelectorView {
 
-    constructor(element, onWeaponClickHandler) {
+    constructor(element, onWeaponClickHandler, onSimulatorClickHandler) {
         this.element = element;
         this._weaponListElem = this.element.getElementsByClassName('js-weapon-list')[0];
         this._simutatorButtonElem = this.element.getElementsByClassName('js-simutator')[0];
         this._onWeaponClickHandler = onWeaponClickHandler;
+        this._onSimulatorClickHandler = onSimulatorClickHandler;
     }
 
     render() {
         this._weaponListElem.innerHTML = this.generateWeaponsHTML();
         this.attachWeaponClickHandlers(this._onWeaponClickHandler);
+        this.addSimulatorClickHandler( this._onSimulatorClickHandler );
     }
 
     generateWeaponsHTML() {
@@ -39,5 +41,9 @@ export default class WeaponSelectorView {
 
     findWeaponButtons() {
         return this.element.getElementsByTagName('button');
+    }
+
+    addSimulatorClickHandler(onSimulatorClickHandler) {
+        this._simutatorButtonElem.addEventListener("click", onSimulatorClickHandler);
     }
 }
