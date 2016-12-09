@@ -9,6 +9,10 @@ export default class Player {
         return this._name;
     }
 
+    set name(name) {
+        this._name = name;
+    }
+
     get weapon() {
         return this._weapon;
     }
