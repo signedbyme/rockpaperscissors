@@ -7,7 +7,7 @@ import randomWeaponSelector from './randomWeaponSelector';
 import calculateWinner from './calculateWinner';
 
 const playerOne = new Player('You');
-const playerTwo = new Player('Mr.Robot (aka the computer)');
+const playerTwo = new Player('The computer');
 
 const weaponsElem = document.getElementsByClassName('js-weapons')[0];
 const weaponSelectorView = new WeaponSelectorView(weaponsElem, onWeaponSelectHandler, onSimulatorClickHandler);

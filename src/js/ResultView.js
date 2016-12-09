@@ -25,8 +25,8 @@ export default class ResultView {
 
     resultTemplate(result) {
         return `${result}
-                    <div>${this._playerOne.name} chose ${this._playerOne.weapon}</div>
-                    <div>${this._playerTwo.name} chose ${this._playerTwo.weapon}</div>
+                    <div class="player-weapon-choice">${this._playerOne.name} chose ${this._playerOne.weapon}</div>
+                    <div class="player-weapon-choice">${this._playerTwo.name} chose ${this._playerTwo.weapon}</div>
                     <button>Play again</button>`;
     }
 
