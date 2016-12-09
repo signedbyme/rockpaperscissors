@@ -41,7 +41,7 @@ export default class WeaponSelectorView {
     }
 
     findWeaponButtons() {
-        return this.element.getElementsByTagName('button');
+        return this._weaponListElem.getElementsByTagName('button');
     }
 
     addSimulatorClickHandler(onSimulatorClickHandler) {
