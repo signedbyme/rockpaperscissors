@@ -16,4 +16,8 @@ export default class Player {
     get weapon() {
         return this._weapon;
     }
+
+    set weapon(weapon) {
+        this._weapon = weapon;
+    }
 }
