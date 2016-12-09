@@ -14,5 +14,12 @@ describe('Player', () => {
         expect(player.weapon).to.be.null;
     });
 
+    it('should allow name to be set', () => {
+        let name = 'test';
+        let player = new Player(name);
+        let newName = 'test2';
+        player.name = newName;
+        expect(player.name).to.equal(newName);
+    });
 
 });
