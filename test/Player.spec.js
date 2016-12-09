@@ -30,4 +30,18 @@ describe('Player', () => {
         expect(player.weapon).to.equal(weapon);
     });
 
+    it('should return the players name', () => {
+        let name = 'test';
+        let player = new Player(name);
+        expect(player.name).to.equal(name);
+    });
+
+    it('should return the players weapon', () => {
+        let name = 'test';
+        let player = new Player(name);
+        let weapon = 'paper';
+        player.weapon = weapon;
+        expect(player.weapon).to.equal(weapon);
+    });
+
 });
