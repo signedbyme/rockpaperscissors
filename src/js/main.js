@@ -1,9 +1,10 @@
 require('../css/main.scss');
 
 import WeaponSelectorView from './WeaponSelectorView';
+import ResultView from './ResultView';
 import Player from './Player';
 import randomWeaponSelector from './randomWeaponSelector';
-import calculateWinner from '..//calculateWinner';
+import calculateWinner from './calculateWinner';
 
 const playerOne = new Player('You');
 const playerTwo = new Player('Mr.Robot (aka the computer)');
