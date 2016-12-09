@@ -13,4 +13,6 @@ const weaponRules = {
     }
 }
 
-export {weaponRules};
+const WEAPONS = Object.keys(weaponRules);
+
+export {weaponRules, WEAPONS};

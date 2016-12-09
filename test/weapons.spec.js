@@ -1,4 +1,4 @@
-import {weaponRules} from '../src/js/weapons';
+import {weaponRules, WEAPONS} from '../src/js/weapons';
 
 describe('weapons module', () => {
 
@@ -6,12 +6,12 @@ describe('weapons module', () => {
         it('should be an object of weapon rules', () => {
             expect(weaponRules).to.be.an('object');
         });
+    });
 
-        it('should contain rules for rock, paper and scissor', () => {
-            let weaponKeys = Object.keys(weaponRules);
-
-            expect(weaponKeys).to.have.lengthOf(3);
-            expect(weaponRules).to.have.all.keys(['rock','paper','scissors']);
+    describe('WEAPONS', () => {
+        it('should contain rock, paper and scissor', () => {
+            expect(WEAPONS).to.have.lengthOf(3);
+            expect(WEAPONS).to.eql(['rock','paper','scissors']);
         });
     });
 
