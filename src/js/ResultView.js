@@ -1,15 +1,17 @@
 export default class ResultView {
 
-    constructor(element, playerOne, playerTwo) {
+    constructor(element, playerOne, playerTwo, onPlayAgain) {
         this.element = element;
         this._playerOne = playerOne;
-        this._playerTwo = playerTwo;   
+        this._playerTwo = playerTwo;
         this._winner = null;
+        this._onPlayAgain = onPlayAgain;
     }
 
     render() {
         let result = this.resultMessage();
         this.element.innerHTML = this.resultTemplate(result);
+        this.attachPlayAgainClickHandler();
         this.show();
     }
 
@@ -46,6 +48,14 @@ export default class ResultView {
 
     show() {
         this.element.style.display = 'block';
+    }
+
+    attachPlayAgainClickHandler(){
+        let playAgainButtonElem = this.element.getElementsByTagName('button')[0];
+        playAgainButtonElem.addEventListener('click', (e) => {
+            e.preventDefault();
+            this._onPlayAgain();
+        });
     }
 
 }
