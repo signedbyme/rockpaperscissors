@@ -22,4 +22,12 @@ describe('Player', () => {
         expect(player.name).to.equal(newName);
     });
 
+    it('should allow weapon to be set', () => {
+        let name = 'test';
+        let player = new Player(name);
+        let weapon = 'rock';
+        player.weapon = weapon;
+        expect(player.weapon).to.equal(weapon);
+    });
+
 });
