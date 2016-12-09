@@ -28,7 +28,7 @@ function showWeaponSelectorScreen(){
 
 function showResultScreen() {
     weaponSelectorView.hide();
-    resultView.winner = calculateWinningPlayer(playerOne, playerTwo);
+    resultView.winner = calculateWinner(playerOne, playerTwo);
     resultView.render();
 }
 
