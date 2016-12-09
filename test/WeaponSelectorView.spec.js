@@ -16,6 +16,27 @@ describe('WeaponSelectorView', () => {
             expect(weaponSelectorView.element.innerHTML).to.include(expectedHTML);
         });
 
+        it('should add click handlers to the weapon buttons', () => {
+
+            let element = document.createElement('section');
+            element.innerHTML = '<ul class="js-weapon-list"></ul><button class="js-simutator"></button>';
+
+            //TODO: get sinon working for spys
+            let clickCount = 0;
+            let onClickSpy = () => {clickCount++};
+            let weaponSelectorView = new WeaponSelectorView(element, onClickSpy);
+
+            weaponSelectorView.render();
+            let weaponButtons = weaponSelectorView.element.getElementsByClassName('weapon-button');
+
+            weaponButtons[0].click();
+            expect(clickCount).to.equal(1);
+            weaponButtons[1].click();
+            expect(clickCount).to.equal(2);
+            weaponButtons[2].click();
+            expect(clickCount).to.equal(3);
+        });
+
     });
 
 });
