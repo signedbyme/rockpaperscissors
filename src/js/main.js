@@ -1,5 +1,21 @@
 require('../css/main.scss');
 
-import print from './module';
+import WeaponSelectorView from './WeaponSelectorView';
+import Player from './Player';
 
-print('it works well!');
+const playerOne = new Player('You');
+const playerTwo = new Player('Mr.Robot (aka the computer)');
+const weaponsElem = document.getElementsByClassName('js-weapons')[0];
+const weaponSelectorView = new WeaponSelectorView(weaponsElem);
+
+startGame();
+
+function startGame() {
+    playerOne.weapon = null;
+    playerTwo.weapon = null;
+    showWeaponSelectorScreen();
+}
+
+function showWeaponSelectorScreen(){
+    weaponSelectorView.render();
+}
