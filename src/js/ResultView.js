@@ -58,4 +58,9 @@ export default class ResultView {
         });
     }
 
+    hide() {
+        this.element.innerHTML = '';
+        this.element.style.display = 'none';
+    }
+
 }
