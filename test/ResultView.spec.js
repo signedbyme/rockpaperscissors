@@ -4,6 +4,30 @@ describe('ResultView', () => {
 
     describe('render', () => {
 
+        it('should add click handler to the play again button', () => {
+
+            let element = document.createElement('section');
+            let playerOne = {
+                name: 'Player one',
+                weapon: 'rock'
+            };
+            let playerTwo = {
+                name: 'Player two',
+                weapon: 'paper'
+            };
+
+            //TODO: get sinon working for spys
+            let clickCount = 0;
+            let onClickSpy = () => {clickCount++};
+            let resultView = new ResultView(element, playerOne, playerTwo, onClickSpy);
+            resultView.render();
+            let playAgainButton = resultView.element.getElementsByTagName('button')[0];
+
+            playAgainButton.click();
+
+            expect(clickCount).to.equal(1);
+        });
+
         describe('wining result', () => {
 
             it('should render the winning result message', () => {
