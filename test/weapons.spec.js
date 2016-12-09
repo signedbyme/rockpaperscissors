@@ -6,6 +6,13 @@ describe('weapons module', () => {
         it('should be an object of weapon rules', () => {
             expect(weaponRules).to.be.an('object');
         });
+
+         it('should contain rules for rock, paper and scissor', () => {
+            let weaponKeys = Object.keys(weaponRules);
+
+            expect(weaponKeys).to.have.lengthOf(3);
+            expect(weaponRules).to.have.all.keys(['rock','paper','scissors']);
+        });
     });
 
 });
