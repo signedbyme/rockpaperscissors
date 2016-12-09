@@ -20,7 +20,7 @@ export default class ResultView {
     }
 
     get winner() {
-        return this._winner
+        return this._winner;
     }
 
     resultTemplate(result) {
