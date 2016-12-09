@@ -13,7 +13,8 @@ export default class WeaponSelectorView {
     render() {
         this._weaponListElem.innerHTML = this.generateWeaponsHTML();
         this.attachWeaponClickHandlers(this._onWeaponClickHandler);
-        this.addSimulatorClickHandler( this._onSimulatorClickHandler );
+        this.addSimulatorClickHandler(this._onSimulatorClickHandler);
+        this.show();
     }
 
     generateWeaponsHTML() {
@@ -45,5 +46,13 @@ export default class WeaponSelectorView {
 
     addSimulatorClickHandler(onSimulatorClickHandler) {
         this._simutatorButtonElem.addEventListener("click", onSimulatorClickHandler);
+    }
+
+    hide() {
+        this.element.style.display = 'none';
+    }
+
+    show() {
+        this.element.style.display = 'block';
     }
 }
